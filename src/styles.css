@@ -1,0 +1,114 @@
+@import "./index.css";
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+:root {
+  --root-background: linear-gradient(
+    to right,
+    rgb(163, 1, 1),
+    rgb(140, 0, 255)
+  );
+  --button-background: rgba(255, 255, 255, 0.75);
+  --button-background-event: rgba(255, 255, 255, 0.9);
+  --functionalButton-background: rgb(255 190 190 / 75%);
+  --functionalButton-background-event: rgb(253 152 152 / 75%);
+}
+body {
+  min-height: 100vh;
+  /* background: linear-gradient(to right, rgb(163, 1, 1), rgb(140, 0, 255)); */
+  background: var(--root-background);
+  display: grid;
+  place-items: center;
+  background-repeat: no-repeat;
+}
+.calculator-grid {
+  display: grid;
+  margin-top: 2rem;
+  position: relative;
+  justify-content: center;
+  grid-template-columns: repeat(4, 6rem);
+  grid-template-rows: minmax(7rem, auto) repeat(5, 6rem);
+  box-shadow: 0 10px 19px 3px black;
+}
+.calculator-grid > button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  /* background-color: rgba(255, 255, 255, 0.75); */
+  background: var(--button-background);
+}
+.calculator-grid .functionalButton {
+  background-color: var(--functionalButton-background);
+  transition: 0.1s all ease-in;
+}
+
+.calculator-grid .functionalButton:hover,
+.calculator-grid .functionalButton:focus {
+  background-color: var(--functionalButton-background-event);
+}
+.calculator-grid::before {
+  content: "";
+  filter: blur(35px);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0 0;
+  background-color: var(--root-background);
+  z-index: -1;
+}
+.calculator-grid > button:focus,
+.calculator-grid > button:hover {
+  background-color: var(--button-background-event);
+}
+.span-two {
+  grid-column: span 2;
+}
+.output {
+  position: relative;
+  grid-column: 1/-1;
+  background: rgb(0 0 0 / 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  padding: 0.75em;
+  padding-top: 1em;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-family: "Electrolize", sans-serif;
+  /* filter: blur(5px); */
+}
+.output .minor-details {
+  color: blue;
+  font-size: 0.75em;
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.previous-operand {
+  /* color: rgb(255 255 255 /0.75); */
+  color: rgb(139 234 75 /0.75);
+  font-size: 1.5rem;
+}
+.current-operand {
+ color: rgb(139 234 75 /1);
+  font-size: 2.5rem;
+}
+.previous-operand-small{
+  /* color: rgb(255 255 255 /0.75); */
+  color: rgb(139 234 75 /0.75);
+  font-size: 1rem;
+}
+.current-operand-small {
+  color: rgb(139 234 75 /1);
+  font-size: 2rem;
+}
