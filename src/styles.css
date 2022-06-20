@@ -112,3 +112,10 @@ body {
   color: rgb(139 234 75 /1);
   font-size: 2rem;
 }
+.footer-information{
+    position: absolute;
+    bottom:1em;
+    right:1em;
+    font-size:0.9em;
+    font-style: italic;
+}

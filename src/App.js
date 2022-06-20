@@ -113,6 +113,7 @@ function App() {
   });
 
   return (
+    <>
     <div className="calculator-grid">
       <div className="output" ref={outputScreen}>
         <div className="minor-details">
@@ -166,6 +167,10 @@ function App() {
         =
       </button>
     </div>
+     <div className="footer-information">
+        Disable VIM extensions to use the calculator with most efficiency.
+     </div>
+    </>
   );
 }
 
