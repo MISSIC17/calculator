@@ -1,13 +1,14 @@
 @import "./styles.css";
 @media only screen and (max-width: 400px) {
   body {
-    overflow: hidden;
+    /* overflow: hidden; */
     max-height: 99vh;
   }
   .calculator-grid {
     max-width: 98vw;
     max-height: 95vh;
     grid-template-columns: repeat(4, 5.2rem);
+  grid-template-rows: minmax(6rem, auto) repeat(5, 5rem);
   }
   .calculator-grid .functionalButton:active, .calculator-grid .functionalButton:hover{
     animation: bgShiftFunctionality 0.1s backwards;
@@ -15,6 +16,9 @@
   .calculator-grid button:active, .calculator-grid button:hover{
     animation: bgShift 0.1s backwards;
 
+  }
+  .footer-information{
+      display:none;
   }
 }
 @keyframes bgShiftFunctionality {
