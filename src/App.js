@@ -51,6 +51,9 @@ export function evaluate({ currentOperand, previousOperand, operation }) {
 }
 
 function App() {
+  useEffect(()=>{
+    document.title = "Amethyst Calculator";
+  },[])
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
     reducer,
     {}
