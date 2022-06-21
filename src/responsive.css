@@ -6,7 +6,7 @@
   }
   .calculator-grid {
     max-width: 100vw;
-    max-height: 100vh;
+    min-height: 100vh;
     margin-top: 0rem;
     grid-template-columns: repeat(4, calc(100vw / 4));
     grid-template-rows: minmax(20vh, auto) repeat(5, calc(80vh / 5));
