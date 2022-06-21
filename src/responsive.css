@@ -2,6 +2,7 @@
 @media only screen and (max-width: 420px) {
   body {
     overflow: hidden;
+    min-height: 100vh;
   }
   .calculator-grid {
     max-width: 100vw;
